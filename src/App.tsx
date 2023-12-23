@@ -5,7 +5,6 @@ type App = {
     name?: string
 }
 const App = (props: App) => {
-    const ad = 45345
     console.log(props)
     const [name] = useState([])
     useEffect(() => {
