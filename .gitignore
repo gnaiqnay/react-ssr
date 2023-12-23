@@ -1,6 +1,6 @@
 .idea
 .settings
-.vscode
+# .vscode
 .DS_Store
 .eslintcache
 .stylelintcache
