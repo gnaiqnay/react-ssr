@@ -1,5 +1,5 @@
 .idea
-.git
+/.git/
 .settings
 .DS_Store
 .eslintcache

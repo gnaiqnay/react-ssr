@@ -1,6 +1,6 @@
 {
     "name": "@fontend-scaffolding/react-scaffolding",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "",
     "parcel": {
         "publicPath": "/",
@@ -14,12 +14,7 @@
         "lint:style": "stylelint \"src/**/*.{scss,css}\" --cache --fix",
         "lint:*": "npm run lint:js && npm run lint:style",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-        "prepare": "git init && husky install"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+        "husky": "husky install"
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx}": [
@@ -34,7 +29,10 @@
         "type": "git",
         "url": "git+https://github.com/yqiang2019/react-scaffolding.git"
     },
-    "keywords": [],
+    "keywords": [
+        "react",
+        "react-scaffolding"
+    ],
     "author": "",
     "license": "ISC",
     "bugs": {
