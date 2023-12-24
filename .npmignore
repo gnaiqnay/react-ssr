@@ -1,0 +1,14 @@
+.idea
+.git
+.settings
+.DS_Store
+.eslintcache
+.stylelintcache
+*.log
+*.iml
+*.project
+node_modules
+build
+dist
+bin/*.log
+package-lock.json

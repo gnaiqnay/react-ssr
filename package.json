@@ -1,5 +1,5 @@
 {
-    "name": "react-scaffolding",
+    "name": "@fontend-scaffolding/react-scaffolding",
     "version": "1.0.0",
     "description": "",
     "parcel": {
@@ -14,7 +14,7 @@
         "lint:style": "stylelint \"src/**/*.{scss,css}\" --cache --fix",
         "lint:*": "npm run lint:js && npm run lint:style",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-        "prepare": "husky install"
+        "prepare": "git init && husky install"
     },
     "husky": {
         "hooks": {
@@ -98,5 +98,9 @@
             "/api": "http://xxxx.com",
             "/mock": "http://mock.com"
         }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
     }
 }
