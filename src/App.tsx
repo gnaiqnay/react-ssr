@@ -1,20 +1,16 @@
-import { useEffect, useState } from 'react'
+import ErrorBoundary from 'Components/ErrorBoundary'
+import { BrowserRouter } from 'react-router-dom'
+import RouterView from '@/router'
 import './app.scss'
 
-type App = {
-    name?: string
-}
-
-const App = (props: App) => {
-    console.log(props)
-    const [name] = useState([])
-    useEffect(() => {
-        console.log(name)
-    }, [name])
-    useEffect(() => {
-        console.log(name)
-    }, [name])
-    return <div>sdasd</div>
+const App = () => {
+    return (
+        <ErrorBoundary>
+            <BrowserRouter>
+                <RouterView />
+            </BrowserRouter>
+        </ErrorBoundary>
+    )
 }
 
 export default App

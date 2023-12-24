@@ -15,6 +15,7 @@
             "Layouts/*": ["src/layouts/*"],
             "Pages/*": ["src/pages/*"],
             "Api/*": ["src/api/*"],
+            "Router": ["src/router/*"],
             "Styles/*": ["src/styles/*"],
             "Utils/*": ["src/utils/*"],
             "Store/*": ["src/store/*"],
