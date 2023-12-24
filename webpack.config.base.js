@@ -2,12 +2,13 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 const CONTENT_HASH = '[contenthash:8]'
-const BUILD_PATH = 'dist'
+const BUILD_PATH = 'build'
 const ASSETS_PATH = 'assets'
 
-const NODE_ENV = process.env.NODE_ENV
+// const NODE_ENV = process.env.NODE_ENV
 module.exports = {
     target: ['web', 'es5'],
     cache: {
@@ -20,6 +21,7 @@ module.exports = {
         path: path.resolve(__dirname, BUILD_PATH),
         filename: `${ASSETS_PATH}/js/[name].${CONTENT_HASH}.js`,
         chunkFilename: `${ASSETS_PATH}/js/[name].${CONTENT_HASH}.chunk.js`,
+        publicPath: '/',
         clean: true,
     },
     resolve: {
@@ -56,7 +58,7 @@ module.exports = {
             },
             {
                 test: /\.s[a|c]ss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
                 /**
@@ -95,12 +97,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
         }),
+        new ForkTsCheckerWebpackPlugin({
+            async: false,
+        }),
         // JS 规范检测
         new ESLintPlugin({
             fix: true,
             cache: true,
             extensions: ['js', 'jsx', 'ts', 'tsx'],
-            overrideConfigFile: `.eslintrc${NODE_ENV === 'development' ? '' : '.prod'}.js`,
+            // overrideConfigFile: `.eslintrc${NODE_ENV === 'development' ? '' : '.prod'}.js`,
         }),
         new MiniCssExtractPlugin({
             filename: `${ASSETS_PATH}/css/[name].${CONTENT_HASH}.css`,

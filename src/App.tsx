@@ -4,6 +4,7 @@ import './app.scss'
 type App = {
     name?: string
 }
+
 const App = (props: App) => {
     console.log(props)
     const [name] = useState([])
