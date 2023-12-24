@@ -1,6 +1,6 @@
 {
     "name": "@fontend-scaffolding/react-scaffolding",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
     "parcel": {
         "publicPath": "/",
